@@ -1,0 +1,16 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity logicaDeDesvio is
+  port ( opcode : in std_logic_vector(2 downto 0);
+         saida : out std_logic
+  );
+end entity;
+
+architecture comportamento of decoderInstru is
+
+
+  begin
+saida <= 
+         "000000000";  -- NOP para os opcodes Indefinidos
+end architecture;

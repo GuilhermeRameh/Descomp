@@ -1,0 +1,203 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/DesComp/Aula 2 - Conjunto/simulation/qsim
+Eaula2atividade
+Z0 w1663770410
+Z1 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 ^K2eeK[IVbX]]MLcdOEI91
+Z2 DPx8 cyclonev 19 cyclonev_components 0 22 GFL[QAd@dAZF:`jjOGn9>2
+Z3 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 3dzZ?YU_4FC5UU0cTXRET1
+Z4 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z5 DPx6 altera 11 dffeas_pack 0 22 H5F:RRfLz82T3`4>@b7mS3
+Z6 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z7 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z8 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+Z9 DPx6 altera 28 altera_primitives_components 0 22 VSD=32;3391kSOd?PDZYj3
+!i122 54
+Z10 dC:/DesComp/Aula5/simulation/qsim
+Z11 8Aula2Atividade.vho
+Z12 FAula2Atividade.vho
+l0
+Z13 L39 1
+V<@zz:;l8=Q[[C[=LonU;T2
+!s100 Ni8NzACdWfdE=j^V[J]aN3
+Z14 OV;C;2020.1;71
+32
+Z15 !s110 1663770411
+!i10b 1
+Z16 !s108 1663770411.000000
+Z17 !s90 -work|work|Aula2Atividade.vho|
+Z18 !s107 Aula2Atividade.vho|
+!i113 1
+Z19 o-work work
+Z20 tExplicit 1 CvgOpt 0
+Astructure
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+DEx4 work 14 aula2atividade 0 22 <@zz:;l8=Q[[C[=LonU;T2
+!i122 54
+l448
+L134 4412
+VWK5KEG`f^C<h9aaaSdaC73
+!s100 DP^XhMl6_bzm24G6XGJgg0
+R14
+32
+R15
+!i10b 1
+R16
+R17
+R18
+!i113 1
+R19
+R20
+Eaula2atividade_vhd_vec_tst
+Z21 w1663770409
+R7
+R8
+!i122 55
+R10
+Z22 8Waveform.vwf.vht
+Z23 FWaveform.vwf.vht
+l0
+Z24 L32 1
+VdQ>zQb6XHWI`XgAC`J<W13
+!s100 MQXGJ?IaWKRh]i5U:_=N[0
+R14
+32
+Z25 !s110 1663770412
+!i10b 1
+Z26 !s108 1663770412.000000
+Z27 !s90 -work|work|Waveform.vwf.vht|
+Z28 !s107 Waveform.vwf.vht|
+!i113 1
+R19
+R20
+Aaula2atividade_arch
+R7
+R8
+DEx4 work 26 aula2atividade_vhd_vec_tst 0 22 dQ>zQb6XHWI`XgAC`J<W13
+!i122 55
+l63
+L34 58
+Vj`L`D6]d>@N=UWE3^mzCE1
+!s100 ]fi3dc>]J3<n^FiII]F<01
+R14
+32
+R25
+!i10b 1
+R26
+R27
+R28
+!i113 1
+R19
+R20
+Etoplevel
+Z29 w1666065105
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+!i122 492
+Z30 dC:/DesComp/Aula9/simulation/qsim
+Z31 8TopLevel.vho
+Z32 FTopLevel.vho
+l0
+R13
+VhUzYTf^[kL:ChQ7?7mC>d2
+!s100 P>_JVm][WgoCYQCHRFM7Q1
+R14
+32
+Z33 !s110 1666065106
+!i10b 1
+Z34 !s108 1666065106.000000
+Z35 !s90 -work|work|TopLevel.vho|
+Z36 !s107 TopLevel.vho|
+!i113 1
+R19
+R20
+Astructure
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+DEx4 work 8 toplevel 0 22 hUzYTf^[kL:ChQ7?7mC>d2
+!i122 492
+l2194
+L58 22549
+VfG][2O1[N`=U0H7VM@Fhb3
+!s100 ;=QDanlFffZG64ASzcE632
+R14
+32
+R33
+!i10b 1
+R34
+R35
+R36
+!i113 1
+R19
+R20
+Etoplevel_vhd_vec_tst
+Z37 w1666065104
+R7
+R8
+!i122 493
+R30
+R22
+R23
+l0
+R24
+Vi`cW82E4ohG=CFFdJ4Rgz3
+!s100 HOYZb^>X>O4gVXH@FzMRJ1
+R14
+32
+Z38 !s110 1666065107
+!i10b 1
+Z39 !s108 1666065107.000000
+R27
+R28
+!i113 1
+R19
+R20
+Atoplevel_arch
+R7
+R8
+Z40 DEx4 work 20 toplevel_vhd_vec_tst 0 22 i`cW82E4ohG=CFFdJ4Rgz3
+!i122 493
+l69
+Z41 L34 232
+V]D<DL2@VLF3QOE9Rh[4F01
+!s100 nI4MDmCWoc2R:hGUVkbi<2
+R14
+32
+R38
+!i10b 1
+R39
+R27
+R28
+!i113 1
+R19
+R20

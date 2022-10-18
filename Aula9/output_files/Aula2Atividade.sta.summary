@@ -1,0 +1,101 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'registradorGenerico:PC|DOUT[0]'
+Slack : -15.817
+TNS   : -123.201
+
+Type  : Slow 1100mV 85C Model Setup 'KEY[0]'
+Slack : -10.706
+TNS   : -493.324
+
+Type  : Slow 1100mV 85C Model Hold 'KEY[0]'
+Slack : -6.203
+TNS   : -234.731
+
+Type  : Slow 1100mV 85C Model Hold 'registradorGenerico:PC|DOUT[0]'
+Slack : -1.397
+TNS   : -9.567
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'registradorGenerico:PC|DOUT[0]'
+Slack : -0.870
+TNS   : -49.167
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'KEY[0]'
+Slack : -0.621
+TNS   : -67.921
+
+Type  : Slow 1100mV 0C Model Setup 'registradorGenerico:PC|DOUT[0]'
+Slack : -15.646
+TNS   : -121.377
+
+Type  : Slow 1100mV 0C Model Setup 'KEY[0]'
+Slack : -10.291
+TNS   : -473.810
+
+Type  : Slow 1100mV 0C Model Hold 'KEY[0]'
+Slack : -6.165
+TNS   : -240.132
+
+Type  : Slow 1100mV 0C Model Hold 'registradorGenerico:PC|DOUT[0]'
+Slack : -1.574
+TNS   : -10.392
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'registradorGenerico:PC|DOUT[0]'
+Slack : -1.039
+TNS   : -59.525
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'KEY[0]'
+Slack : -0.545
+TNS   : -63.565
+
+Type  : Fast 1100mV 85C Model Setup 'registradorGenerico:PC|DOUT[0]'
+Slack : -7.921
+TNS   : -61.720
+
+Type  : Fast 1100mV 85C Model Setup 'KEY[0]'
+Slack : -5.981
+TNS   : -263.627
+
+Type  : Fast 1100mV 85C Model Hold 'KEY[0]'
+Slack : -2.992
+TNS   : -112.206
+
+Type  : Fast 1100mV 85C Model Hold 'registradorGenerico:PC|DOUT[0]'
+Slack : -0.665
+TNS   : -4.234
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'KEY[0]'
+Slack : -0.671
+TNS   : -59.352
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'registradorGenerico:PC|DOUT[0]'
+Slack : -0.194
+TNS   : -4.660
+
+Type  : Fast 1100mV 0C Model Setup 'registradorGenerico:PC|DOUT[0]'
+Slack : -7.278
+TNS   : -56.745
+
+Type  : Fast 1100mV 0C Model Setup 'KEY[0]'
+Slack : -5.085
+TNS   : -223.015
+
+Type  : Fast 1100mV 0C Model Hold 'KEY[0]'
+Slack : -2.923
+TNS   : -115.986
+
+Type  : Fast 1100mV 0C Model Hold 'registradorGenerico:PC|DOUT[0]'
+Slack : -0.578
+TNS   : -3.712
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'KEY[0]'
+Slack : -0.672
+TNS   : -60.106
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'registradorGenerico:PC|DOUT[0]'
+Slack : -0.119
+TNS   : -2.194
+
+------------------------------------------------------------

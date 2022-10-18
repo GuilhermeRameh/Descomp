@@ -1,0 +1,149 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'Processador:CPU|registradorGenerico:PC|DOUT[0]'
+Slack : -17.576
+TNS   : -133.066
+
+Type  : Slow 1100mV 85C Model Setup 'CLOCK_50'
+Slack : -9.901
+TNS   : -1035.519
+
+Type  : Slow 1100mV 85C Model Hold 'CLOCK_50'
+Slack : -3.627
+TNS   : -120.042
+
+Type  : Slow 1100mV 85C Model Hold 'Processador:CPU|registradorGenerico:PC|DOUT[0]'
+Slack : -2.806
+TNS   : -11.352
+
+Type  : Slow 1100mV 85C Model Recovery 'KEY[0]'
+Slack : -7.306
+TNS   : -7.306
+
+Type  : Slow 1100mV 85C Model Removal 'KEY[0]'
+Slack : -1.090
+TNS   : -1.090
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'Processador:CPU|registradorGenerico:PC|DOUT[0]'
+Slack : -2.728
+TNS   : -172.402
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.935
+TNS   : -165.555
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'KEY[0]'
+Slack : -0.577
+TNS   : -1.218
+
+Type  : Slow 1100mV 0C Model Setup 'Processador:CPU|registradorGenerico:PC|DOUT[0]'
+Slack : -17.266
+TNS   : -130.419
+
+Type  : Slow 1100mV 0C Model Setup 'CLOCK_50'
+Slack : -9.677
+TNS   : -1007.170
+
+Type  : Slow 1100mV 0C Model Hold 'CLOCK_50'
+Slack : -3.474
+TNS   : -123.268
+
+Type  : Slow 1100mV 0C Model Hold 'Processador:CPU|registradorGenerico:PC|DOUT[0]'
+Slack : -2.810
+TNS   : -12.075
+
+Type  : Slow 1100mV 0C Model Recovery 'KEY[0]'
+Slack : -7.260
+TNS   : -7.260
+
+Type  : Slow 1100mV 0C Model Removal 'KEY[0]'
+Slack : -1.105
+TNS   : -1.105
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'Processador:CPU|registradorGenerico:PC|DOUT[0]'
+Slack : -2.714
+TNS   : -166.797
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.957
+TNS   : -173.625
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'KEY[0]'
+Slack : -0.647
+TNS   : -1.364
+
+Type  : Fast 1100mV 85C Model Setup 'Processador:CPU|registradorGenerico:PC|DOUT[0]'
+Slack : -9.219
+TNS   : -69.817
+
+Type  : Fast 1100mV 85C Model Setup 'CLOCK_50'
+Slack : -5.318
+TNS   : -526.976
+
+Type  : Fast 1100mV 85C Model Hold 'CLOCK_50'
+Slack : -1.650
+TNS   : -51.848
+
+Type  : Fast 1100mV 85C Model Hold 'Processador:CPU|registradorGenerico:PC|DOUT[0]'
+Slack : -1.279
+TNS   : -4.221
+
+Type  : Fast 1100mV 85C Model Recovery 'KEY[0]'
+Slack : -3.008
+TNS   : -3.008
+
+Type  : Fast 1100mV 85C Model Removal 'KEY[0]'
+Slack : -1.206
+TNS   : -1.206
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'Processador:CPU|registradorGenerico:PC|DOUT[0]'
+Slack : -1.146
+TNS   : -61.057
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.963
+TNS   : -159.177
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'KEY[0]'
+Slack : -0.749
+TNS   : -2.140
+
+Type  : Fast 1100mV 0C Model Setup 'Processador:CPU|registradorGenerico:PC|DOUT[0]'
+Slack : -8.244
+TNS   : -62.271
+
+Type  : Fast 1100mV 0C Model Setup 'CLOCK_50'
+Slack : -4.652
+TNS   : -460.456
+
+Type  : Fast 1100mV 0C Model Hold 'CLOCK_50'
+Slack : -1.560
+TNS   : -53.610
+
+Type  : Fast 1100mV 0C Model Hold 'Processador:CPU|registradorGenerico:PC|DOUT[0]'
+Slack : -1.128
+TNS   : -3.632
+
+Type  : Fast 1100mV 0C Model Recovery 'KEY[0]'
+Slack : -2.621
+TNS   : -2.621
+
+Type  : Fast 1100mV 0C Model Removal 'KEY[0]'
+Slack : -1.269
+TNS   : -1.269
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.942
+TNS   : -164.566
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'Processador:CPU|registradorGenerico:PC|DOUT[0]'
+Slack : -0.934
+TNS   : -47.002
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'KEY[0]'
+Slack : -0.781
+TNS   : -2.320
+
+------------------------------------------------------------

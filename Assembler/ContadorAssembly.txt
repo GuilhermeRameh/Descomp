@@ -1,0 +1,252 @@
+SETUP  #Label para o setup
+LDI $0  #Carrega o acumulador com o valor 0
+STA @288  #Armazena o valor do acumulador em HEX0
+STA @289  #Armazena o valor do acumulador em HEX1
+STA @290  #Armazena o valor do acumulador em HEX2
+STA @291  #Armazena o valor do acumulador em HEX3
+STA @292  #Armazena o valor do acumulador em HEX4
+STA @293  #Armazena o valor do acumulador em HEX5
+STA @256  #Armazena o valor do bit0 do acumulador no LDR0 ~ LEDR7
+STA @257  #Armazena o valor do bit0 do acumulador no LDR8
+STA @258  #Armazena o valor do bit0 do acumulador no LDR9
+STA @8  #Armazena o valor 0 em MEM[8], eq à flag para contagem
+STA @9  #Armazena o valor 0 em MEM[9], eq à flag de overflow centenas de milhares
+STA @10  #Armazena o valor 0 em MEM[10], equivalente à HEX0 - unidades
+STA @11  #Armazena o valor 0 em MEM[11], equivalente à HEX1 - dezenas
+STA @12  #Armazena o valor 0 em MEM[12], equivalente à HEX2 - centenas
+STA @13  #Armazena o valor 0 em MEM[13], equivalente à HEX3 - milhares
+STA @14  #Armazena o valor 0 em MEM[14], equivalente à HEX4 - dezenas de milhar
+STA @15  #Armazena o valor 0 em MEM[15], equivalente à HEX5 - centenas de milhar
+STA @20  #Armazena o valor 0 em MEM[20], equivalente à limite de contagem unidades
+STA @21  #Armazena o valor 0 em MEM[21], equivalente à limite de contagem dezenas
+STA @22  #Armazena o valor 0 em MEM[22], equivalente à limite de contagem centenas
+STA @23  #Armazena o valor 0 em MEM[23], equivalente à limite de contagem milhares
+STA @24  #Armazena o valor 0 em MEM[24], equivalente à limite de contagem dezenas de milhares
+STA @25  #Armazena o valor 0 em MEM[25], equivalente à limite de contagem centenas de milhares
+STA @0  #Armazena em MEM[0] com o valor 0
+LDI $1  #Carrega acumulador com valor 1
+STA @1  #Armazena em MEM[1] com o valor 0
+STA @511 #Armazena em ResetKEY0Reg como 1
+STA @510 #Armazena em ResetKEY1Reg como 1
+LDI $10  #Carrega acumulador com valor 10
+STA @2  #Armazena em MEM[2] com o valor 10
+MAINLOOP  #Começo do loop principal
+LDI $1  #Carrega o valor 1 para o acumulador
+CEQ @0  #Compara com 0, deve fazer FlagIgual ser 0
+LDA @352  #Carrega o valor de KEY[0] - Incremento de contagem
+CEQ @0  #Compara com o valor 0
+JEQ @39 #Desvia se igual a 0 (botao nao foi pressionado) TODO: Checar se é esse valor da mem mesmo
+JSR @INCREMENTAVALOR  #Botao foi pressionado, vai para a SubRotina INCREMENTAVALOR
+NOP  #Retorno da subrotina INCREMENTAVALOR
+LDI $1  #Carrega o valor 1 para o acumulador
+CEQ @0  #Compara com 0, deve fazer FlagIgual ser 0
+LDA @10  #Carrega o acumulador com MEM[10] - unidades
+STA @288  #Armazena "unidades" em HEX0
+LDA @11  #Carrega o acumulador com MEM[11] - dezenas
+STA @289  #Armazena "unidades" em HEX1
+LDA @12  #Carrega o acumulador com MEM[12] - centenas
+STA @290  #Armazena "unidades" em HEX2
+LDA @13  #Carrega o acumulador com MEM[13] - milhares
+STA @291  #Armazena "unidades" em HEX3
+LDA @14  #Carrega o acumulador com MEM[14] - dezenas milhares
+STA @292  #Armazena "unidades" em HEX4
+LDA @15  #Carrega o acumulador com MEM[15] - centenas milhares
+STA @293  #Armazena "unidades" em HEX5
+LDA @353  #Carrega o valor de KEY[1] - Configuração de limite de incremento
+CEQ @0  #Compara com o valor 0
+JEQ @58  #Desvia se igual a 0 (botao nao foi pressionado) TODO: Checar se é esse valor da mem mesmo
+JSR @LIMITAINCREMENTO  #Botao foi pressionado, vai para a subrotina LIMITAINCREMENTO
+NOP  #Retorno da subrotina LIMITAINCREMENTO
+LDI $1  #Carrega o valor 1 para o acumulador
+CEQ @0  #Compara com 0, deve fazer FlagIgual ser 0
+JSR @VERIFICALIMITE
+NOP  #Retorno da subrotina VERIFICALIMITE
+LDI $1  #Carrega o valor 1 para o acumulador
+CEQ @0  #Compara com 0, deve fazer FlagIgual ser 0
+LDA @356  #Carrega o valor de FPGA_RESET - Reseta a contagem
+CEQ @0  #Compara com o valor 0
+JEQ @69  #Desvia se igual a 0 (botao nao foi pressionado) TODO: Checar se é esse valor da mem mesmo
+JSR @REINCONTAGEM  #Botao foi pressionado, vai para a subrotina REINCONTAGEM
+NOP  #Retorno da subrotina REINCONTAGEM
+LDI $1  #Carrega o valor 1 para o acumulador
+CEQ @0  #Compara com 0, deve fazer FlagIgual ser 0
+JMP @MAINLOOP  #Volta para o começo do loop principal
+INCREMENTAVALOR
+LDI $1  #Carrega o valor 1 para o acumulador
+CEQ @0  #Compara com 0, deve fazer FlagIgual ser 0
+LDA @8  #Carrega o acumulador com o valor da flag de parar contagem
+CEQ @1  #Compara com 1
+JEQ @144   #Se for 1, pula pro final da subrotina TODO: Checar se é esse o valor mesmo
+LDI $1  #Carrega o valor 1 para o acumulador
+CEQ @0  #Compara com 0, deve fazer FlagIgual ser 0
+LDA @10  #Carrega acumulador com MEM[10] - unidades
+SOMA @1  #Soma com MEM[1] - valor 1
+CEQ @2  #Compara com 10
+JEQ @OFU  #Se igual, pula para OverFlow Unidades (OFU)
+RET
+OFU
+LDI $1  #Carrega o valor 1 para o acumulador
+CEQ @0  #Compara com 0, deve fazer FlagIgual ser 0
+LDA @0  #Carrega acumulador com o valor 0
+STA @10  #Armazena em MEM[10] valor 0 - unidades
+LDA @11  #Carrega acumulador com MEM[11] - dezenas
+SOMA @1  #Soma com MEM[1] - valor 1
+CEQ @2  #Compara com 10
+JEQ @OFD  #Se igual, pula para OverFlow Dezenas (OFD)
+RET
+OFD
+LDI $1  #Carrega o valor 1 para o acumulador
+CEQ @0  #Compara com 0, deve fazer FlagIgual ser 0
+LDA @0  #Carrega acumulador com o valor 0
+STA @11  #Armazena em MEM[11] valor 0 - dezenas
+LDA @12  #Carrega acumulador com MEM[12] - centenas
+SOMA @1  #Soma com MEM[1] - valor 1
+CEQ @2  #Compara com 10
+JEQ @OFC  #Se igual, pula para OverFlow Centenas (OFC)
+RET
+OFC
+LDI $1  #Carrega o valor 1 para o acumulador
+CEQ @0  #Compara com 0, deve fazer FlagIgual ser 0
+LDA @0  #Carrega acumulador com o valor 0
+STA @12  #Armazena em MEM[12] valor 0 - centenas
+LDA @13  #Carrega acumulador com MEM[13] - milhares
+SOMA @1  #Soma com MEM[1] - valor 1
+CEQ @2  #Compara com 10
+JEQ @OFM  #Se igual, pula para OverFlow Milhares (OFM)
+RET
+OFM
+LDI $1  #Carrega o valor 1 para o acumulador
+CEQ @0  #Compara com 0, deve fazer FlagIgual ser 0
+LDA @0  #Carrega acumulador com o valor 0
+STA @13  #Armazena em MEM[13] valor 0 - milhares
+LDA @14  #Carrega acumulador com MEM[14] - dezenas milhares
+SOMA @1  #Soma com MEM[1] - valor 1
+CEQ @2  #Compara com 10
+JEQ @OFDM  #Se igual, pula para OverFlow dezenas milhares (OFDM)
+RET
+OFDM
+LDI $1  #Carrega o valor 1 para o acumulador
+CEQ @0  #Compara com 0, deve fazer FlagIgual ser 0
+LDA @0  #Carrega acumulador com o valor 0
+STA @14  #Armazena em MEM[14] valor 0 - dezenas milhares
+LDA @15  #Carrega acumulador com MEM[15] - Centenas milhares
+SOMA @1  #Soma com MEM[1] - valor 1
+CEQ @2  #Compara com 10
+JEQ @OFCM  #Se igual, pula para OverFlow dezenas milhares (OFDM)
+RET
+OFCM
+LDI $1  #Carrega o valor 1 para o acumulador
+CEQ @0  #Compara com 0, deve fazer FlagIgual ser 0
+LDA @0  #Carrega acumulador com o valor 0
+STA @15  #Armazena em MEM[15] valor 0 - centenas milhares
+LDA @1  #Carrega o acumulador com 1
+STA @9  #Armazena 1 na MEM[9] - Bit de overflow
+STA @8  #Armazena 1 na MEM[8] - Flag Para Contagem
+NOP
+RET 
+LIMITAINCREMENTO
+LDA @320  #Le os valores de SW0 ~ SW7
+STA @20  #Guarda na Mem[21] - Limita valor unidades
+LDA @1  #Carrega 1 para o acumulador
+STA @510  #Reseta o Reg do KEY1
+CEQ @0  #Compara com 0, deve fazer FlagIgual ser 0
+DEZENAS
+LDA @353  #Carrega o valor do KEY[1]
+CEQ @0  #Compara com o valor 0
+JEQ @DEZENAS  #Volta se o botão nao foi pressionado
+LDA @320  #Le os valores de SW0 ~ SW7
+STA @21  #Guarda na Mem[21] - Limita valor dezenas
+LDA @1  #Carrega 1 para o acumulador
+STA @510  #Reseta o Reg do KEY1
+CEQ @0  #Compara com 0, deve fazer FlagIgual ser 0
+CENTENAS
+LDA @353  #Carrega o valor do KEY[1]
+CEQ @0  #Compara com o valor 0
+JEQ @CENTENAS  #Volta se o botão nao foi pressionado
+LDA @320  #Le os valores de SW0 ~ SW7
+STA @22  #Guarda na Mem[21] - Limita valor centenas
+LDA @1  #Carrega 1 para o acumulador
+STA @510  #Reseta o Reg do KEY1
+CEQ @0  #Compara com 0, deve fazer FlagIgual ser 0
+MILHARES
+LDA @353  #Carrega o valor do KEY[1]
+CEQ @0  #Compara com o valor 0
+JEQ @MILHARES  #Volta se o botão nao foi pressionado
+LDA @320  #Le os valores de SW0 ~ SW7
+STA @23  #Guarda na Mem[21] - Limita valor milhares
+LDA @1  #Carrega 1 para o acumulador
+STA @510  #Reseta o Reg do KEY1
+CEQ @0  #Compara com 0, deve fazer FlagIgual ser 0
+DEZMILHARES
+LDA @353  #Carrega o valor do KEY[1]
+CEQ @0  #Compara com o valor 0
+JEQ @DEZMILHARES  #Volta se o botão nao foi pressionado
+LDA @320  #Le os valores de SW0 ~ SW7
+STA @24  #Guarda na Mem[21] - Limita valor dezenas de milhares
+LDA @1  #Carrega 1 para o acumulador
+STA @510  #Reseta o Reg do KEY1
+CEQ @0  #Compara com 0, deve fazer FlagIgual ser 0
+CEMMILHARES
+LDA @353  #Carrega o valor do KEY[1]
+CEQ @0  #Compara com o valor 0
+JEQ @CEMMILHARES  #Volta se o botão nao foi pressionado
+LDA @320  #Le os valores de SW0 ~ SW7
+STA @25  #Guarda na Mem[21] - Limita valor dezenas de milhares
+LDA @1  #Carrega 1 para o acumulador
+STA @510  #Reseta o Reg do KEY1
+CEQ @0  #Compara com 0, deve fazer FlagIgual ser 0
+RET
+VERIFICALIMITE
+LDA @10  #Carrega acumulador com MEM[10] - unidades
+CEQ @20  #Compara com MEM[20] - limite unidades
+JEQ @CON1
+RET
+CON1
+LDA @11  #Carrega acumulador com MEM[10] - unidades
+CEQ @21  #Compara com MEM[20] - limite unidades
+JEQ @CON2
+RET
+CON2
+LDA @12  #Carrega acumulador com MEM[10] - unidades
+CEQ @22  #Compara com MEM[20] - limite unidades
+JEQ @CON3
+RET
+CON3
+LDA @13  #Carrega acumulador com MEM[10] - unidades
+CEQ @23  #Compara com MEM[20] - limite unidades
+JEQ @CON4
+RET
+CON4
+LDA @14  #Carrega acumulador com MEM[10] - unidades
+CEQ @24  #Compara com MEM[20] - limite unidades
+JEQ @CON5
+RET
+CON5
+LDA @15  #Carrega acumulador com MEM[10] - unidades
+CEQ @25  #Compara com MEM[20] - limite unidades
+JEQ @CON6
+RET
+CON6
+LDA @1  #Carrega o acumulador com 1
+STA @8  #Armazena o valor 1 em MEM[8] - Flag Para Contagem
+LIMITERETURN
+RET
+REINCONTAGEM
+LDI $0  #Carrega o acumulador com o valor 0
+STA @288  #Armazena o valor do acumulador em HEX0
+STA @289  #Armazena o valor do acumulador em HEX1
+STA @290  #Armazena o valor do acumulador em HEX2
+STA @291  #Armazena o valor do acumulador em HEX3
+STA @292  #Armazena o valor do acumulador em HEX4
+STA @293  #Armazena o valor do acumulador em HEX5
+STA @256  #Armazena o valor do bit0 do acumulador no LDR0 ~ LEDR7
+STA @257  #Armazena o valor do bit0 do acumulador no LDR8
+STA @258  #Armazena o valor do bit0 do acumulador no LDR9
+STA @8  #Armazena o valor 0 em MEM[8], eq à flag para contagem
+STA @9  #Armazena o valor 0 em MEM[9], eq à flag de overflow centenas de milhares
+STA @10  #Armazena o valor 0 em MEM[10], equivalente à HEX0 - unidades
+STA @11  #Armazena o valor 0 em MEM[11], equivalente à HEX1 - dezenas
+STA @12  #Armazena o valor 0 em MEM[12], equivalente à HEX2 - centenas
+STA @13  #Armazena o valor 0 em MEM[13], equivalente à HEX3 - milhares
+STA @14  #Armazena o valor 0 em MEM[14], equivalente à HEX4 - dezenas de milhar
+STA @15  #Armazena o valor 0 em MEM[15], equivalente à HEX5 - centenas de milhar
