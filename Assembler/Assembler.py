@@ -117,7 +117,11 @@ with open(destinoBIN, "w") as f:  # Abre o destino BIN
             instrucaoLine = instrucaoLine.replace("\n", "")
             instrucaoLine = instrucaoLine.replace(" ", "")
             if('@' not in instrucaoLine) and ('$' not in instrucaoLine) and (instrucaoLine not in mne.keys()):
-                labels[instrucaoLine] = str(hex(cont)[2:].upper().zfill(2))
+                if cont < 256:
+                    labels[instrucaoLine] = str(hex(cont)[2:].upper().zfill(2))
+                else:
+                    labels[instrucaoLine] = str(
+                        hex(cont-256)[2:].upper().zfill(2))
 
         cont += 1
 

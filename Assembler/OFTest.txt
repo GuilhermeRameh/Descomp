@@ -12,24 +12,24 @@ STA @258  #Armazena o valor do bit0 do acumulador no LDR9
 STA @8  #Armazena o valor 0 em MEM[8], eq à flag para contagem
 STA @9  #Armazena o valor 0 em MEM[9], eq à flag de overflow centenas de milhares
 STA @10  #Armazena o valor 0 em MEM[10], equivalente à HEX0 - unidades
-STA @0  #Armazena em MEM[0] com o valor 0
 LDI $9
 STA @11  #Armazena o valor 0 em MEM[11], equivalente à HEX1 - dezenas
 STA @12  #Armazena o valor 0 em MEM[12], equivalente à HEX2 - centenas
 STA @13  #Armazena o valor 0 em MEM[13], equivalente à HEX3 - milhares
 STA @14  #Armazena o valor 0 em MEM[14], equivalente à HEX4 - dezenas de milhar
 STA @15  #Armazena o valor 0 em MEM[15], equivalente à HEX5 - centenas de milhar
-LDI $1  #Carrega acumulador com valor 1
-STA @1  #Armazena em MEM[1] com o valor 0
-STA @511 #Armazena em ResetKEY0Reg como 1
-STA @510 #Armazena em ResetKEY1Reg como 1
-LDI $10  #Carrega acumulador com valor 10
 STA @20  #Armazena o valor 0 em MEM[20], equivalente à limite de contagem unidades
 STA @21  #Armazena o valor 0 em MEM[21], equivalente à limite de contagem dezenas
 STA @22  #Armazena o valor 0 em MEM[22], equivalente à limite de contagem centenas
 STA @23  #Armazena o valor 0 em MEM[23], equivalente à limite de contagem milhares
 STA @24  #Armazena o valor 0 em MEM[24], equivalente à limite de contagem dezenas de milhares
 STA @25  #Armazena o valor 0 em MEM[25], equivalente à limite de contagem centenas de milhares
+STA @0  #Armazena em MEM[0] com o valor 0
+LDI $1  #Carrega acumulador com valor 1
+STA @1  #Armazena em MEM[1] com o valor 0
+STA @511 #Armazena em ResetKEY0Reg como 1
+STA @510 #Armazena em ResetKEY1Reg como 1
+LDI $10  #Carrega acumulador com valor 10
 STA @2  #Armazena em MEM[2] com o valor 10
 MAINLOOP  #Começo do loop principal
 LDI $1  #Carrega o valor 1 para o acumulador
